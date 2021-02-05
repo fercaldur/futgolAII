@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block encabezado %} 
+
+<center><h2>Clasificación de LaLiga</h2>
+
+{% endblock %}
+
+{% block contenido %} 
+<div class="hijo">
+<table class="striped">
+    <thead>
+        <tr class="text-center">
+            <th style="text-align: center; background-color: #cec9c9;">Posición</th>
+            <th style="text-align: center; background-color: #cec9c9;">Nombre</th>
+            <th style="text-align: center; background-color: #cec9c9;">Puntos</th>
+            <th style="text-align: center; background-color: #cec9c9;">Partidos Jugados</th>
+            <th style="text-align: center; background-color: #cec9c9;">Victorias</th>
+            <th style="text-align: center; background-color: #cec9c9;">Empates</th>
+            <th style="text-align: center; background-color: #cec9c9;">Derrotas</th>
+            <th style="text-align: center; background-color: #cec9c9;">Diferencia de goles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in clasificacionP %}
+        <tr>
+                <td style="text-align: center;">{{row.idClasificacion}}</td>
+                <td style="text-align: center;">{{row.nombreEquipo}}
+                    <img style="float: right;" width="30px" height="30px" src="{{row.nombreEquipo.escudo}}"></td>
+                <td style="text-align: center;">{{row.puntos}}</td>
+                <td style="text-align: center;">{{row.partidosJ}}</td>
+                <td style="text-align: center;">{{row.victorias}}</td>
+                <td style="text-align: center;">{{row.empates}}</td>
+                <td style="text-align: center;">{{row.derrotas}}</td>
+                <td style="text-align: center;">{{row.diferenciaG}}</td>
+        </tr>
+                {% endfor %}
+    </tbody>
+</table>
+</div>
+</center>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+<center><h1> Búsqueda de Noticias por Equipo </h1></center>
+{% endblock %}
+
+{% block contenido %}
+
+<script>  $(function() {
+    $('select').formSelect();
+  });
+  
+  $('#prim').change(function()
+  { 
+      for (i = 0; i < 10; i++)
+      { 
+          $('#seg').append($('<option>',
+          {
+              value: i,
+              text : "Option "+i 
+          }));
+      }
+      $('#seg').formSelect();
+  });</script>
+  
+  <center><form class="hijo" id="formulario" method="post" action=''>{% csrf_token %}
+    {{formulario}}
+    <button class="btn waves-effect waves-light" type="submit" name="action">Realizar búsqueda</button>
+    </form>
+
+        {% if noticias %}
+        <h3> {{ noticias|length }} noticias relacionadas con el equipo</h3>
+        {% for row in noticias %}
+        <center>
+        <div class="cajaNoticias">
+        
+        <b><h3 style="color: black">{{row.tituloNoticia}}</h3></b>
+        <h5 style="color: black">{{row.descripcionNoticia}}</h5>
+        <br>
+        <img width="50%" height="50%" src={{row.imagenNoticia}}><br>
+        <a style="color: black" href= {{row.linkNoticia}}>Ver noticia al completo en ESPN</a>
+        <h6 align="left" style="color: black">Hace {{row.tiempoPublicacion}}</h6>
+        <h6 align="left" style="color: black">{{row.autor}}</h6>
+        </center>          
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

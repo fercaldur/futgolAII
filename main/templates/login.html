@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+<script>   $(document).ready(function() {
+    M.updateTextFields();
+  });
+  </script>
+  
+{% block encabezado %} 
+<center>
+<h1>Login</h1></center>
+
+{% endblock %}
+
+{% block contenido %}
+<center>
+  <div style="margin-left: 30%; margin-right: 30%;">
+  <br>
+        <form id="formulario" method="post" action='' class="col s12">{% csrf_token %}
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input name="username" type="text" id="username" class="form-control" required>
+            <label for="username">Usuario</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">security</i>
+            <input name="password" type="password" id="password" class="form-control" required>
+            <label for="password">Contraseña</label>
+
+          </div>
+          <button class="btn btn-lg btn-secondary btn-block" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
+
+</center>
+{% endblock %}

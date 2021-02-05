@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <style> h1.fant {font-family: fantasy;}
+    .caja { 
+            font-family: sans-serif; 
+            font-weight: 100; 
+            color: #000000; 
+            background:#000000;
+            margin: -20px 30px 20px;
+            border-radius: 30px 0px 25px 0px;
+            -moz-border-radius: 25px 0px 25px 0px;
+            -webkit-border-radius: 25px 0px 25px 0px;
+            border: 7px solid #000000;
+            display: inline-block;
+            }
+            
+    .padre {
+            text-align: center;
+            }       
+
+    .hijo {
+            padding: 10px;
+            display: inline-block;
+            }    
+
+    .cajaNoticias { 
+        font-family: sans-serif; 
+        font-size: 18px; 
+        font-weight: 400; 
+        color: #ffffff; 
+        background:#f0efef;
+        margin: 70px 70px 50px;
+        border-radius: 35px 0px 35px 0px;
+        -moz-border-radius: 35px 0px 35px 0px;
+        -webkit-border-radius: 35px 0px 35px 0px;
+        border: 2px solid #ca3e39;
+         }
+
+
+  </style>
+  <meta charset='utf-8'>
+  <center> <img width="10%" height="10%" src="https://i.ibb.co/XS8mbkK/futgol-AII.jpg" alt="futgol-AII">
+  </center>
+  <!-- Minified Bootstrap CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+  <!-- Minified Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="../static/js/jquery.min.js"></script>
+</head>
+<body>
+  <header> 
+          <nav class="red">
+            <div class="nav-wrapper">
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/clasificacion">Clasificación</a></li>
+                <li><a href="/equipos">Equipos</a></li>
+                <li><a href="/noticias">Noticias</a></li>
+                <li><a href="/calendario">Calendario y resultados</a></li>
+                <li><a href="/partidosPorJornada">Buscar partidos por jornada</a></li>
+                <li><a href="/noticiasPorEquipo">Buscar noticias por equipo</a></li>
+                <li><a href="/cargaBD">Cargar base de datos</a></li>
+                <li><a href="/cargaWhoosh">Cargar Whoosh</a></li>
+                
+              </ul>
+            </div>
+          </nav>
+  </header>
+  {% block encabezado %}
+  {% endblock %}
+  {% block contenido %}
+  {% endblock %}
+  <br><br><br><br>
+  <footer class="red">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Pie de página</h5>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="/sobrenosotros">Sobre nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+<center><h1> Búsqueda de Partidos por Jornada </h1></center>
+{% endblock %}
+
+{% block contenido %}
+        <script>  $(function() {
+            $('select').formSelect();
+        });
+        
+        $('#prim').change(function()
+        { 
+            for (i = 0; i < 10; i++)
+            { 
+                $('#seg').append($('<option>',
+                {
+                    value: i,
+                    text : "Option "+i 
+                }));
+            }
+            $('#seg').formSelect();
+        });</script>
+
+        
+
+        <center><form class="hijo" id="formulario" method="post" action=''>{% csrf_token %}
+            {{formulario}}
+            <button class="btn waves-effect waves-light" type="submit" name="action">Realizar búsqueda</button>
+            </form>
+
+        {% if partidos %}
+        
+        <h3> {{ partidos.0.0.jornada }}</h3>
+        <br>
+         <div class="padre">
+                {% for row in partidos %}
+
+                        <div class="hijo">
+                        <div class="hijo"><h5>{{row.0.equipoLocal}}</h5></div><img  width="10%" height="10%" src="{{row.1}}"> <div class="caja"><h5 style="color: white">{{row.0.golesLocal}}
+                                 - {{row.0.golesVisitante}}</h5></div><img  width="10%" height="10%" src="{{row.2}}"><div class="hijo"><h5>{{row.0.equipoVisitante}}</h5></div>
+                <h6>{{row.0.fechaPartido}}</h6>
+                        <br>
+                        </div>
+                        
+                {% endfor %}
+
+                    </div>
+                </center>
+
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block encabezado %} 
+
+<center><h2>Calendario y resultados de LaLiga</h2></center>
+
+{% endblock %}
+
+{% block contenido %} 
+
+<h5>
+<a href="/partidosPorJornada"><b>Buscar partidos por Jornada</b></a>
+</h5>
+        <center>
+                
+        <br>
+        <div class="padre">
+               {% for row in partidosP %}
+                       <div class="hijo">
+                       {% for equipo in row.equipoLocal.all %}<div class="hijo"><h5>{{ equipo }}</h5></div><img  width="10%" height="10%" src="{{equipo.escudo}}">{% endfor %} <div class="caja"><h5 style="color: white">{{row.golesLocal}}
+                                - {{row.golesVisitante}}</h5></div>{% for equipo in row.equipoVisitante.all %}<img  width="10%" height="10%" src="{{equipo.escudo}}"><div class="hijo"><h5>{{ equipo }}</h5></div>{% endfor %}
+                <h6>J{{row.jornada}}</h6>
+                <h6>{{row.fechaPartido}}</h6>
+                       <br>
+                       </div>
+                       
+               {% endfor %}
+                   </div>
+               </center>
+{% endblock %}

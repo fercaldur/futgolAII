@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block encabezado %} 
+
+<center><h2>Equipos de LaLiga</h2></center>
+
+{% endblock %}
+
+{% block contenido %} 
+<div class="padre">
+    {% for row in equiposP %}
+
+            <div class="hijo">
+            <div class="hijo"></div><img src="{{row.escudo}}">
+    <h5>{{row.nombreEquipo}}</h5>
+            <br>
+            </div>
+            
+    {% endfor %}
+
+        </div>
+    </center>
+
+</div>
+{% endblock %}

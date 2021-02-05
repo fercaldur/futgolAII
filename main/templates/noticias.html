@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block encabezado %} 
+
+<center><h2>Últimas noticias de LaLiga</h2></center>
+
+{% endblock %}
+
+{% block contenido %} 
+
+<h4><a href="/noticiasPorEquipo"><b>Busca noticias de tu equipo</b></a></h4>
+
+        {% for row in noticiasP %}
+                <center>
+                <div class="cajaNoticias">
+                
+                <b><h3 style="color: black">{{row.tituloNoticia}}</h3></b>
+                <h5 style="color: black">{{row.descripcionNoticia}}</h5>
+                <br>
+                <img width="50%" height="50%" src={{row.imagenNoticia}}><br>
+                <a style="color: black" href= {{row.linkNoticia}}>Ver noticia al completo en ESPN</a>
+                <h6 align="left" style="color: black">Hace {{row.tiempoPublicacion}}</h6>
+                <h6 align="left" style="color: black">{{row.autor}}</h6>
+                </center>          
+                </div>
+        {% endfor %}
+{% endblock %}

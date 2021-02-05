@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+<script>$(document).ready(function() {
+  $("#aceptar").click(function() {
+    $(".progress").toggle();
+  });
+});</script>
+<center><h1> Carga de Whoosh</h1>
+{% endblock %}
+
+  {% block contenido %}
+    <br>
+    <h5><b>Aviso:</b> Este proceso es lento, borra los datos de Whoosh y requiere conexión a internet</h5>
+    <h5>Además, se cerrará sesión tanto si acepta como si cancela el proceso para mayor seguridad. </h5>
+
+    <form id='formulario' method='post' action=''>{% csrf_token %}
+    <br><br>
+    <div class="progress" style="display: none;">
+    <div class="indeterminate"></div>
+    </div>
+    <br><br>
+    <button class="btn waves-effect waves-light" id= "aceptar" type="submit" name="Aceptar" value="Aceptar">Aceptar</button>
+    <button class="btn waves-effect waves-light" id= "cancelar" type="submit" name="Cancelar" value="Cancelar">Cancelar</button>
+
+  </form>
+</center>
+  {% endblock %}
