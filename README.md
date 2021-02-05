@@ -8,3 +8,5 @@ FútGol es un portal deportivo informativo sobre la Liga Española de fútbol ma
 2. Lanzar app con $ python ./manage.py runserver (por defecto el puerto de lanzamiento es el puerto 8000). 
 
 Todos estos comandos se ejecutan en la terminal de tu IDE. 
+
+El superusuario creado será el administrador de la BD y sólo él podrá poblar la base de datos. 
