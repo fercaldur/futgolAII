@@ -1,5 +1,5 @@
-# futgolAII
-FútGol es un portal deportivo informativo sobre la Liga Española de fútbol masculino. 
+# FútGol 
+FútGol es un portal deportivo informativo sobre la Liga Española de fútbol masculino. Proyecto para la asignatura de cuarto curso Acceso Inteligente a la Información de la carrera Ingeniería Informática de Software. 
 
 
 # Pasos para ejecutar proyecto 
